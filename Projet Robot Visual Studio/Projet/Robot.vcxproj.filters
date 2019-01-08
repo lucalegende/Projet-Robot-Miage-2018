@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="winthread.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="winbgi.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="text.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="palette.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="mouse.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="file.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="drawing.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="dibutil.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="bgiout.cxx">
+      <Filter>Source\cxx</Filter>
+    </ClCompile>
+    <ClCompile Include="Cases.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Editeur.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Robot.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dibutil.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgi.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgim.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="winbgitypes.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Cases.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Editeur.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Robot.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{f2b981aa-8428-4764-a963-0daf0d9c4d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{33bd0113-3fb9-4d85-ac7a-9b3cbffa7bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\cxx">
+      <UniqueIdentifier>{b8fad338-82f2-4907-9bf8-5887e5985975}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>
