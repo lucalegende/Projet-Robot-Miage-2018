@@ -15,6 +15,7 @@ random_device rd;
 mt19937 gen(rd());
 uniform_int_distribution<> rando(0, 1);
 
+//Constructeur
 Game::Game():
     d_terrain{},
 	d_name{""}
@@ -22,10 +23,12 @@ Game::Game():
 	browseFile();
 }
 
+//Destructeur
 Game::~Game()
 {
 }
 
+//Démarre le jeux
 void Game::LoadGame(int& window)
 {
 	if (d_name != "")
@@ -36,6 +39,7 @@ void Game::LoadGame(int& window)
 	}
 }
 
+//Affichage du terrain du robot et de la fin
 void Game::Affichage()
 {
 	d_terrain.afficherTerrain();
@@ -54,6 +58,7 @@ void Game::Affichage()
 	outtextxy(d_boutton[2].left() + 20, d_boutton[2].bottom() + 10, "Retour");
 }
 
+//Emplacement des bouton
 void Game::Emplacement()
 {
 	int  left = d_terrain.casesPrecis(d_terrain.longeur() - 1).left() + 70,
@@ -68,6 +73,7 @@ void Game::Emplacement()
 	}
 }
 
+//Ouverture du  fichier terrain
 void Game::browseFile()
 {
     char filename[MAX_PATH];
@@ -137,6 +143,7 @@ void Game::browseFile()
 	}
 }
 
+//Change le robot de cases
 void Game::moveRobot(int init,int final){
 
 	if(init < d_terrain.longeur()*d_terrain.largeur())
@@ -147,7 +154,7 @@ void Game::moveRobot(int init,int final){
 	}
 }
 
-
+//Le robot chagne de cases vers le haut
 void Game::moveRobotToTop()
 {
 	auto t1 = d_terrain.cases();
@@ -164,6 +171,7 @@ void Game::moveRobotToTop()
    
 }
 
+//Le robot chagne de cases vers le bas
 void Game::moveRobotToBottom()
 {
 	auto t1 = d_terrain.cases();
@@ -180,6 +188,7 @@ void Game::moveRobotToBottom()
     
 }
 
+//Le robot chagne de cases vers la gauche
 void Game::moveRobotToLeft()
 {
 	auto t1 = d_terrain.cases();
@@ -196,6 +205,7 @@ void Game::moveRobotToLeft()
    
 }
 
+//Le robot chagne de cases vers la droite
 void Game::moveRobotToRight()
 {
 	auto t1 = d_terrain.cases();
@@ -217,6 +227,7 @@ void Game::moveRobotToRight()
     
 }
 
+//Algorithme de la main gauche
 void Game::AlgoMainGauche(vector<Cases>& t1)
 {
 	int index = distance(t1.begin(), find(t1.begin(), t1.end(), d_robot.cases()));
@@ -338,6 +349,7 @@ void Game::AlgoMainGauche(vector<Cases>& t1)
 	}
 }
 
+//Algorithme de pledge
 void Game::AlgoPledge(int direction ,vector<Cases>& t1)
 {
 	switch (direction)
@@ -353,6 +365,7 @@ void Game::AlgoPledge(int direction ,vector<Cases>& t1)
 	}
 }
 
+//Algorithme de la main gauche
 void Game::AlgoMaindroite(vector<Cases>& t1)
 {
 
@@ -491,6 +504,7 @@ void Game::AlgoMaindroite(vector<Cases>& t1)
 	}
 }
 
+//Vérifie si le robot arrive a la sortie
 bool Game::fin() const
 {
 	auto t1 = d_terrain.cases();
@@ -508,21 +522,25 @@ bool Game::fin() const
 
 }
 
+//Retorune le terrain
 Terrain Game::terrain() const
 {
 	return d_terrain;
 }
 
+//retourne le nom du fichier
 string Game::name() const
 {
 	return d_name;
 }
 
+//retourne si il y a un robot
 Robot Game::robot() const
 {
 	return d_robot;
 }
 
+//Selection du boutton 
 void Game::SelectButton(int x, int y, bool &quittez)
 {
 	int direction = rando(gen);
@@ -573,6 +591,7 @@ void Game::SelectButton(int x, int y, bool &quittez)
 	}
 }
 
+//Méthode permettant de jouer au jeux
 void Game::PlayGame()
 {
     int x, y, command =0;

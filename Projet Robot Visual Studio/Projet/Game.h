@@ -9,8 +9,12 @@
 class Game
 {
     public:
+		//Constructeur
         Game();
-        virtual ~Game();
+		//Destructeur
+        ~Game();
+
+		//Méthode de modification
         void LoadGame(int& window);
 		void Affichage();
         void PlayGame();
@@ -22,17 +26,20 @@ class Game
 		void AlgoPledge(int direction, vector<Cases>& t1);
 		void AlgoMainGauche(vector<Cases>& t1);
 		void AlgoMaindroite(vector<Cases>& t1);
+		void SelectButton(int x, int y, bool & quittez);
+
+		//Méthode de récupération de donnée
 		bool fin() const;
 		Terrain terrain() const;
 		string name() const;
 		Robot robot() const;
-		void SelectButton(int x, int y, bool & quittez);
-
-    protected:
-
+		
     private:
+		//Méthode privée
 		void Emplacement();
 		void browseFile();
+
+		//Variable privée
         Robot d_robot;
         Terrain d_terrain;
 		string d_name;

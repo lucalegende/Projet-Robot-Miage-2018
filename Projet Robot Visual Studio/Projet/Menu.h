@@ -20,6 +20,7 @@ class Menu
         void SelectButton();         // Permet d'aller sois dans l'éditeur soir de jouer
         void Affichage();            // Affiche le Menu
 
+		//Variable privée
         vector<Cases> d_bouttonMenu; // Vecteur de boutton
 
 };

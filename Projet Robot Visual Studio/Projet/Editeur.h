@@ -26,7 +26,9 @@ class Editeur
 		int distanceRobot(int & right, int & bottom, vector<Cases>& t1, string  type) const;
 		void ModificationTerrain();
 
+		//Variable privé
 		vector<Cases> d_boutton;
+		int d_robot;
 		Terrain d_terrain;
 };
 

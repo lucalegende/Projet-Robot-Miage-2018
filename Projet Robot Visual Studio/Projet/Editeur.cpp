@@ -12,9 +12,9 @@ using std::find;
 using std::distance;
 
 string nam = ""; //Nom du fichir
-int robot = 0; //Si il existe un robot sur le terrain
-int windows; //feneetre actuelle
+int windows; //fenetre actuelle
 
+//Retourne le nom du fichier
 string getFileName(const string& s) {
 
 	char sep = '/';
@@ -31,18 +31,20 @@ string getFileName(const string& s) {
 	return("");
 }
 
+//Constructeur
 Editeur::Editeur():
-    d_terrain{}
+    d_terrain{},
+	d_robot{0}
 {
 	BrowseName();
-	robot = 0;
 }
 
+//Destructeur
 Editeur::~Editeur()
 {
-	//closegraph(windows);
 }
 
+//Méthode permettant l'affichage du de l'écran
 void Editeur::Ecran(int& window)
 {
 	windows = window;
@@ -50,11 +52,13 @@ void Editeur::Ecran(int& window)
 	ModificationTerrain();
 }
 
+//Retourne le terrain
 Terrain Editeur::terrain() const
 {
 	return d_terrain;
 }
 
+//Affichage du terrain et des bouton  
 void Editeur::Affichage()
 {
 	d_terrain.afficherTerrain();
@@ -72,6 +76,7 @@ void Editeur::Affichage()
 
 }
 
+//Emplacement et création des boutonns
 void Editeur::Emplacement()
 {
 	int  left = d_terrain.casesPrecis(d_terrain.longeur() - 1).left()+70 ,
@@ -86,6 +91,7 @@ void Editeur::Emplacement()
 	}
 }
 
+//Permet l'ouverture du fichier
 void Editeur::BrowseName()
 {
 	char filename[MAX_PATH];
@@ -129,9 +135,18 @@ void Editeur::BrowseName()
                     }
                     else if(l =='o')
                     {
-                        d_terrain.Type(i,"robot");
-                        robot =1;
-                        i++;
+						if (d_robot == 0)
+						{
+							d_terrain.Type(i, "robot");
+							d_robot = 1;
+							i++;
+						}
+						else
+						{
+							d_terrain.Type(i, "vide");
+							i++;
+						}
+                       
                     }
                     else if(l =='f')
                     {
@@ -154,6 +169,7 @@ void Editeur::BrowseName()
 	}
 }
 
+//permet de sauvegarder le fichier
 void Editeur::SaveFile()
 {
 
@@ -214,17 +230,20 @@ void Editeur::SaveFile()
 
 }
 
+//Sauvegarde le fichier
 void Editeur::save()
 {
 
 	SaveFile();
 }
 
+//Ouvre le fichier
 void Editeur::open()
 {
 	BrowseName();
 }
 
+//Méthode permettant de selectionner un boutton
 void Editeur::SelectButton(int x ,int y,bool &quittez)
 {
 	if (x >= d_boutton[0].left() && x <= d_boutton[0].right() && y >= d_boutton[0].bottom() && y <= d_boutton[0].top())
@@ -238,11 +257,13 @@ void Editeur::SelectButton(int x ,int y,bool &quittez)
 	}
 }
 
+//Calcul de l'index du robot dans le terrain
 int Editeur::distanceRobot(int& right, int& bottom, vector<Cases>& t1, string type) const
 {
 	return distance(t1.begin(), find(t1.begin(), t1.end(), Cases{ right + 20,bottom + 20,right,bottom,type }));
 }
 
+//Méthode de modification de Terrain
 void Editeur::ModificationTerrain()
 {
 	bool quittez = false;
@@ -289,7 +310,7 @@ void Editeur::ModificationTerrain()
                 setcolor(WHITE);
                 rectangle(right + 20, bottom + 20, right, bottom);
 
-                if (robot == 1)
+                if (d_robot == 1)
                 {
 					d_terrain.Type(distanceRobot(right, bottom, t1, "fin"), "vide");
                 }
@@ -298,7 +319,7 @@ void Editeur::ModificationTerrain()
                     setcolor(YELLOW);
                     circle(right+10, bottom+10,10);
 					d_terrain.Type(distanceRobot(right, bottom, t1, "fin"), "robot");
-                    robot = 1;
+                    d_robot = 1;
                 }
 
 
@@ -311,7 +332,7 @@ void Editeur::ModificationTerrain()
                 setcolor(WHITE);
                 rectangle(right + 19.5, bottom + 19.5, right, bottom);
 				d_terrain.Type(distanceRobot(right, bottom, t1, "robot"), "vide");
-                robot = 0;
+                d_robot = 0;
 		}
 	}
 }

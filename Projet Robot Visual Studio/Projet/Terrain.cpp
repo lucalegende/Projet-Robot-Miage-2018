@@ -2,6 +2,7 @@
 #include "wtypes.h"
 #include <iostream>
 
+//Constructeur
 Terrain::Terrain():
     d_longeur{20},
     d_largeur{20}
@@ -9,6 +10,7 @@ Terrain::Terrain():
     initialise();
 }
 
+//Constructeur
 Terrain::Terrain(int longeur, int largeur):
     d_longeur{longeur},
     d_largeur{largeur},
@@ -18,9 +20,11 @@ Terrain::Terrain(int longeur, int largeur):
     initialise();
 }
 
+//Destructeur
 Terrain::~Terrain()
 {}
 
+//Taille de l'écran
 void GetDesktopResolution(int& horizontal, int& vertical)
 {
    RECT desktop;
@@ -35,6 +39,7 @@ void GetDesktopResolution(int& horizontal, int& vertical)
    vertical = desktop.bottom;
 }
 
+//Vérfie la taille de l'écran
 void Terrain::verificationTailleTerrain()
 {
     int horizontal = 0;
@@ -49,6 +54,7 @@ void Terrain::verificationTailleTerrain()
     }
 }
 
+//Initialise le terrain
 void Terrain::initialise()
 {
 
@@ -69,6 +75,7 @@ void Terrain::initialise()
     }
 }
 
+//Affiche le terrain
 void Terrain::afficherTerrain()
 {
 
@@ -99,16 +106,20 @@ void Terrain::afficherTerrain()
 
 }
 
+//Méthode qui retourne la longeur du terrain
 int Terrain::longeur() const
 {
     return d_longeur;
 }
 
+
+//Méthode qui retourne la largeur du terrain
 int Terrain::largeur() const
 {
     return d_largeur;
 }
 
+//Méthode d'affectation
 void Terrain::operator=(const Terrain & T)
 {
 	d_largeur = T.d_largeur;
@@ -116,21 +127,25 @@ void Terrain::operator=(const Terrain & T)
 	d_terrain = T.d_terrain;
 }
 
+//Méthode qui change le type de la cases dans un terrain
 void Terrain::Type(int i,string type)
 {
 	d_terrain[i].setType(type);
 }
 
+//Retourne un vecteur de cases
 vector<Cases> Terrain::cases() const
 {
 	return d_terrain;
 }
 
+//Retourne une cases 
 Cases Terrain::casesPrecis(int i) const
 {
 	return d_terrain[i];
 }
 
+//Retourne si un terrain est egale a un autre terrain
 bool Terrain::operator==(vector<Cases> & T) const
 {
 	bool ok = true;
@@ -146,6 +161,7 @@ bool Terrain::operator==(vector<Cases> & T) const
 	return ok;
 }
 
+//Change la couleur
 void changeColor(Cases& cases)
 {
 	setcolor(BLACK);
@@ -154,6 +170,7 @@ void changeColor(Cases& cases)
 	rectangle(cases.left(), cases.top(), cases.right(), cases.bottom());
 }
 
+//Bouge le robot du terrain et change le type de la cases
 void Terrain::moveRobot(int init,int final)
 {
 	d_terrain[init].setType("vide");

@@ -1,3 +1,6 @@
-﻿  Game.cpp
-c:\users\kalic\desktop\projetrobotvisual\projet\game.cpp(105): warning C4018: '<' : incompatibilité signed/unsigned
-  Robot.vcxproj -> C:\Users\Kalic\Desktop\ProjetRobotVisual\Debug\Robot.exe
+﻿  Editeur.cpp
+\\uha.fr\users\e1702090\bureau\projet robot visual studio\projet\editeur.cpp(120): warning C4018: '<' : incompatibilité signed/unsigned
+\\uha.fr\users\e1702090\bureau\projet robot visual studio\projet\editeur.cpp(320): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+  Menu.cpp
+  Génération de code en cours...
+  Robot.vcxproj -> \\uha.fr\users\e1702090\Bureau\Projet Robot Visual Studio\Debug\Robot.exe

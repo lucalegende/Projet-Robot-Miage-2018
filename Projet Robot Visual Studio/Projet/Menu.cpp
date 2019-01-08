@@ -10,6 +10,7 @@ using std::endl;
 
 int windows1;
 
+//Constructeur
 Menu::Menu()
 {
     Emplacement();
@@ -17,9 +18,11 @@ Menu::Menu()
 	SelectButton();
 }
 
+//Destructeur
 Menu::~Menu()
 {}
 
+//Aficchage du menu
 void Menu::Affichage()
 {
     outtextxy(140, 70, "Projet Robot 2018/2019");
@@ -36,6 +39,7 @@ void Menu::Affichage()
 
 }
 
+//Emplacement des bouttons
 void Menu::Emplacement()
 {
     int top =260, bottom = 205;
@@ -47,6 +51,7 @@ void Menu::Emplacement()
     }
 }
 
+//Selection le boutton en fonction de l'emplacement du clique
 void Menu::SelectButton()
 {
     int x , y;
