@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Cases">
+    <Position X="0.5" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQQABABiAAAAAAQgEABAJAAAAAAIBAAAAgAA=</HashCode>
+      <FileName>Cases.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Editeur">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAAAAAAACAAAAAAiAQBAACQAAAAACABAACCABAAAA=</HashCode>
+      <FileName>Editeur.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game">
+    <Position X="10" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>FQAAAAAgAJAAMAARAAAABAACQAiGAAAAAAACAARAFAE=</HashCode>
+      <FileName>Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu">
+    <Position X="2.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAABAAAAAAAAAAAACAAAIAAAAAAACAAAAAAg=</HashCode>
+      <FileName>Menu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Robot">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIAAAAoAAAABIACAAAYAIBAABAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>Robot.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Terrain">
+    <Position X="7.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAEAAAUAAIAAQAAoAACAAUAgAAQAQAA=</HashCode>
+      <FileName>Terrain.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
